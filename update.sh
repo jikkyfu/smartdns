@@ -9,6 +9,5 @@ wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/make-gfwlist.sh
 bash make-gfwlist.sh -d oversea -o gfwlist.conf && echo " +++++  update gfwlist.conf "  >> 1.log
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/blacklist-ip.conf
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/custom.conf
-chmod +x update.sh
 sed -ie '/smartdns/d' /var/spool/cron/crontabs/root
 echo "0 4 * * * bash /etc/smartdns/update.sh" >> /var/spool/cron/crontabs/root
