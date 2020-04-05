@@ -11,6 +11,8 @@ wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/make-gfwlist.sh
 sh make-gfwlist.sh -d oversea -o gfwlist.conf && echo -n " +++++  update gfwlist.conf "  >> 1.log
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/blacklist-ip.conf
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/custom.conf
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/merge.sh
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/go.sh
 sed -ie '/smartdns/d' /var/spool/cron/crontabs/root
 sh ./merge.sh  &&  echo " +++++  update merge-for-smartdns.conf "  >> 1.log
 echo "0 4 * * * sh /etc/smartdns/update.sh" >> /var/spool/cron/crontabs/root
