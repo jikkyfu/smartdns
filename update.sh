@@ -1,8 +1,10 @@
 cd /etc/smartdns
 date "+%Y-%m-%d %H:%M:%S" > 1.log
 #rm address.conf && 
-rm blacklist-ip.conf && rm custom.conf && rm update.sh
-rm anti-ad-for-smartdns.conf
+rm blacklist-ip.conf && rm custom.conf
+rm anti-ad-for-smartdns.conf 
+rm neohosts-for-smartdns.conf
+rm merge-for-smartdns.conf
 wget https://gitee.com/privacy-protection-tools/anti-ad/raw/master/anti-ad-for-smartdns.conf && echo -n "  start update anti-ad-for-smartdns.conf " >> 1.log 
 rm make-gfwlist.sh && rm gfwlist.conf
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/make-gfwlist.sh
