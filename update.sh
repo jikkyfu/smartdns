@@ -1,7 +1,9 @@
 cd /etc/smartdns
-date "+%Y-%m-%d %H:%M:%S" > 1.log
-
 rm /etc/smartdns/* -f
+
+date +"%Y-%m-%d %H:%M:%S" > 1.log
+echo ========  `date +"%Y-%m-%d %H:%M:%S"`  ======== >> 1.log
+
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/update.sh
 
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/make-gfwlist.sh
