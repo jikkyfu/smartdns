@@ -15,5 +15,6 @@ grep address tmp.conf >> merge-for-smartdns.conf && rm tmp.conf
 total=`grep -c address merge-for-smartdns.conf`
 sed -i "s/grep/$total/" merge-for-smartdns.conf
 sed -i '/^\s*$/d' merge-for-smartdns.conf
-sed -i 's///g' merge-for-smartdns.conf
+sed -i 's/
+//g' merge-for-smartdns.conf
 
