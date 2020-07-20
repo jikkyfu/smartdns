@@ -4,8 +4,6 @@ date "+%Y-%m-%d %H:%M:%S" > 1.log
 rm /etc/smartdns/* -f
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/update.sh
 
-wget https://gitee.com/privacy-protection-tools/anti-ad/raw/master/anti-ad-for-smartdns.conf && echo "  start update anti-ad-for-smartdns.conf " >> 1.log 
-
 wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/make-gfwlist.sh
 sh make-gfwlist.sh -d oversea -o gfwlist.conf && echo " +++++  update gfwlist.conf "  >> 1.log
 
