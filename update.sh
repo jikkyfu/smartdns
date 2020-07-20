@@ -15,5 +15,8 @@ wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/merge.sh
 
 sh ./merge.sh  &&  echo " +++++  update merge-for-smartdns.conf "  >> 1.log
 
+rm make-gfwlist.sh
+rm merge.sh
+
 sed -ie '/smartdns/d' /var/spool/cron/crontabs/root
 echo "0 4 * * * sh /etc/smartdns/update.sh" >> /var/spool/cron/crontabs/root
