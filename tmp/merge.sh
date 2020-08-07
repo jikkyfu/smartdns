@@ -10,7 +10,8 @@ wget https://gitee.com/privacy-protection-tools/anti-ad/raw/master/anti-ad-for-s
 rm hosts
 wget https://hosts.nfz.moe/full/hosts
 sed -i '/^\s*$/d' hosts
-sed -i 's///g' hosts
+sed -i 's/
+//g' hosts
 sed -i "/#/d" hosts
 sed -i "/::/d" hosts
 sed -i "/localhost/d" hosts
@@ -43,7 +44,8 @@ grep address tmp.conf >> merge-for-smartdns.conf && rm tmp.conf
 total=`grep -c address merge-for-smartdns.conf`
 sed -i "s/grep/$total/" merge-for-smartdns.conf
 sed -i '/^\s*$/d' merge-for-smartdns.conf
-sed -i 's///g' merge-for-smartdns.conf
+sed -i 's/
+//g' merge-for-smartdns.conf
 
 
 rm hosts
