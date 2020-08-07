@@ -46,6 +46,7 @@ define Package/smartdns/conffiles
 /etc/smartdns/custom.conf
 /etc/smartdns/gfwlist.conf
 /etc/smartdns/merge-for-smartdns.conf
+/etc/smartdns/make-gfwlist.sh
 endef
 
 define Package/smartdns/install
@@ -58,6 +59,7 @@ define Package/smartdns/install
 	$(INSTALL_CONF) $(CURDIR)/conf/blacklist-ip.conf $(1)/etc/smartdns/blacklist-ip.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/custom.conf $(1)/etc/smartdns/custom.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/smartdns.conf $(1)/etc/config/smartdns
+	$(INSTALL_CONF) $(CURDIR)/conf/make-gfwlist.sh $(1)/etc/config/make-gfwlist.sh
 endef
 
 $(eval $(call BuildPackage,smartdns))
