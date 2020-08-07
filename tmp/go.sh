@@ -1,7 +1,8 @@
 rm hosts
 wget https://hosts.nfz.moe/full/hosts
 sed -i '/^\s*$/d' hosts
-sed -i 's///g' hosts
+sed -i 's/
+//g' hosts
 sed -i "/#/d" hosts
 sed -i "/::/d" hosts
 sed -i "/localhost/d" hosts
