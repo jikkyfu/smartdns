@@ -6,12 +6,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=smartdns
-PKG_VERSION:=1.2020.31
+PKG_VERSION:=1.2020.32
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://www.github.com/pymumu/smartdns.git
-PKG_SOURCE_VERSION:=770ce9e8bc502b2769f897676df9495129fb3afa
+PKG_SOURCE_VERSION:=a9829f6155cfe75dc981066a2239954ef7b40d78
 # PKG_MIRROR_HASH:=d5affc45a533e38ee04f3ce47b441aecf316cb9cb68ff410eede67090ec0fcc7
 
 PKG_MAINTAINER:=Nick Peng <pymumu@gmail.com>
@@ -46,7 +46,6 @@ define Package/smartdns/conffiles
 /etc/smartdns/custom.conf
 /etc/smartdns/gfwlist.conf
 /etc/smartdns/merge-for-smartdns.conf
-/etc/smartdns/make-gfwlist.sh
 endef
 
 define Package/smartdns/install
@@ -59,7 +58,6 @@ define Package/smartdns/install
 	$(INSTALL_CONF) $(CURDIR)/conf/blacklist-ip.conf $(1)/etc/smartdns/blacklist-ip.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/custom.conf $(1)/etc/smartdns/custom.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/smartdns.conf $(1)/etc/config/smartdns
-	$(INSTALL_CONF) $(CURDIR)/conf/make-gfwlist.sh $(1)/etc/config/make-gfwlist.sh
 endef
 
 $(eval $(call BuildPackage,smartdns))
