@@ -4,14 +4,14 @@ rm /etc/smartdns/* -f
 date +"%Y-%m-%d %H:%M:%S" > 1.log
 echo ========  `date +"%Y-%m-%d %H:%M:%S"`  ======== >> 1.log
 
-wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/update.sh
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/tmp/update.sh
 
-wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/make-gfwlist.sh
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/tmp/make-gfwlist.sh
 sh make-gfwlist.sh -d oversea -o gfwlist.conf && echo " +++++  update gfwlist.conf "  >> 1.log
 
-wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/blacklist-ip.conf
-wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/custom.conf
-wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/merge.sh
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/tmp/blacklist-ip.conf
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/tmp/custom.conf
+wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/tmp/merge.sh
 
 sh ./merge.sh  &&  echo " +++++  update merge-for-smartdns.conf "  >> 1.log
 
