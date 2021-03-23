@@ -52,7 +52,7 @@ define Package/smartdns/install
 	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/config $(1)/etc/init.d $(1)/etc/smartdns
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/smartdns $(1)/usr/sbin/smartdns
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/package/openwrt/files/etc/init.d/smartdns $(1)/etc/init.d/smartdns
-	$(INSTALL_CONF) $(PKG_BUILD_DIR)/package/openwrt/address.conf $(1)/etc/smartdns/address.conf
+	$(INSTALL_CONF) $(CURDIR)/conf/address.conf $(1)/etc/smartdns/address.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist.conf $(1)/etc/smartdns/gfwlist.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/merge-for-smartdns.conf $(1)/etc/smartdns/merge-for-smartdns.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/blacklist-ip.conf $(1)/etc/smartdns/blacklist-ip.conf
