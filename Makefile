@@ -44,8 +44,8 @@ define Package/smartdns/conffiles
 /etc/smartdns/address.conf
 /etc/smartdns/blacklist-ip.conf
 /etc/smartdns/custom.conf
-/etc/smartdns/gfwlist.conf
-/etc/smartdns/merge-for-smartdns.conf
+# /etc/smartdns/gfwlist.conf
+# /etc/smartdns/merge-for-smartdns.conf
 endef
 
 define Package/smartdns/install
@@ -53,8 +53,8 @@ define Package/smartdns/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/smartdns $(1)/usr/sbin/smartdns
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/package/openwrt/files/etc/init.d/smartdns $(1)/etc/init.d/smartdns
 	$(INSTALL_CONF) $(CURDIR)/conf/address.conf $(1)/etc/smartdns/address.conf
-	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist.conf $(1)/etc/smartdns/gfwlist.conf
-	$(INSTALL_CONF) $(CURDIR)/conf/merge-for-smartdns.conf $(1)/etc/smartdns/merge-for-smartdns.conf
+#	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist.conf $(1)/etc/smartdns/gfwlist.conf
+#	$(INSTALL_CONF) $(CURDIR)/conf/merge-for-smartdns.conf $(1)/etc/smartdns/merge-for-smartdns.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/blacklist-ip.conf $(1)/etc/smartdns/blacklist-ip.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/custom.conf $(1)/etc/smartdns/custom.conf
 	$(INSTALL_CONF) $(CURDIR)/conf/smartdns.conf $(1)/etc/config/smartdns
