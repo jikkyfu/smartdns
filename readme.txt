@@ -20,3 +20,11 @@ wget https://raw.githubusercontent.com/jikkyfu/smartdns/master/smartdnsprocd && 
 执行 pgrep smartdns 查看smartdns的进程号
 执行 kill -s 9 进程号 杀死进程，此时再快速执行 pgrep smartdns 应该不会有smartdns进程号出现
 等待几秒后执行 pgrep smartdns 发现smartdns以新的进程号启动成功
+
+配置文件分两个地方
+/etc/config/smartdns
+/etc/smartdns/address.conf
+/etc/smartdns/blacklist-ip.conf
+/etc/smartdns/custom.conf
+加载配置位置：
+/tmp/etc/smartdns/smartdns.conf
