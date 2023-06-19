@@ -2,13 +2,8 @@
 config smartdns
 	option server_name 'smartdns'
 	option port '6053'
-	option auto_set_dnsmasq '0'
 	option tcp_server '1'
-	option ipv6_server '1'
-	option bind_device '1'
 	option serve_expired '1'
-	option cache_persist '1'
-	option resolve_local_hostnames '1'
 	option force_https_soa '1'
 	option rr_ttl_min '600'
 	option seconddns_port '6553'
@@ -20,10 +15,19 @@ config smartdns
 	option seconddns_no_rule_addr '1'
 	option seconddns_no_cache '1'
 	option prefetch_domain '1'
-	option dualstack_ip_selection '0'
 	option enabled '1'
-	option response_mode 'first-ping'
 	option log_level 'off'
+	option cache_persist '0'
+	option resolve_local_hostnames '0'
+	option seconddns_no_rule_nameserver '1'
+	option seconddns_no_rule_ipset '1'
+	option ipv6_server '1'
+	option bind_device '0'
+	list conf_files 'anti-ad-smartdns.conf'
+	option auto_set_dnsmasq '0'
+	option enable_auto_update '1'
+	option dualstack_ip_selection '0'
+	option proxy_server 'socks5://127.0.0.1:7891'
 	option old_port '6053'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
@@ -49,6 +53,12 @@ config server
 	option type 'udp'
 	option name 'AliDNS'
 	option ip '223.6.6.6'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'AliDNS6'
+	option ip '2400:3200::1'
 
 config server
 	option enabled '1'
@@ -83,11 +93,20 @@ config server
 
 config server
 	option enabled '1'
-	option name 'google'
+	option name 'Google'
 	option ip 'https://8.8.4.4/dns-query'
 	option type 'https'
 	option exclude_default_group '1'
 	option server_group 'oversea'
+	
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'Google6'
+	option ip '2001:4860:4860::8888'
+	option server_group 'oversea'
+	option exclude_default_group '1'
+	option use_proxy '1'
 
 config server
 	option enabled '1'
@@ -104,3 +123,13 @@ config server
 	option type 'tcp'
 	option server_group 'oversea'
 	option exclude_default_group '1'
+	option use_proxy '1'
+
+config download-file
+	option name 'anti-ad-smartdns.conf'
+	option url 'https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf'
+	option type 'config'
+	option desc 'anti-ad'
+
+config download-file
+	option type 'list'
